@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+</head>
+<body>
+<div class="text">
+
+</div>
+<div class="text22">
+
+</div>
+
+<script type="text/javascript">
+
+var arr = ['Это', 'Самый', 'Лучший', 'Сайт !'];
+var elem = $('title');
+
+        function g(textArray, elem, interval){
+            interval = interval || 1000;
+            elem.text(textArray[0])
+            var i = 1
+            setInterval(function()
+            {
+                elem.text(textArray[i])
+                i++;
+
+                if(i == textArray.length){
+                    i = 0;
+                }
+            },interval)
+        }
+        g(arr,elem,1000);
+
+        $.fn.myPlugin = function() {
+
+            alert(this.text)
+
+        };
+$('body').myPlugin({text:45})
+</script>
+</body>
+</html>

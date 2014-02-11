@@ -1,0 +1,43 @@
+.border{
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.advert-head{
+    background: #cccccc;
+    margin-right: 0px;
+}
+.advert-main{
+    min-height: 80px;
+}
+h5 a{
+    color: inherit;
+}
+.margin{
+    margin-right: -5px;
+
+}
+.table-striped tbody{
+    font-size: 13px;
+}
+.on_moderation{
+    color: #be65cc;
+}
+.date{
+    color:#ccc;
+}
+div.flash{
+    position: absolute;
+    z-index: 1000;
+    text-align:center;
+    background-color: #DFF0D8;
+    color: #468847;
+    padding-bottom: 14px;
+    padding-top: 14px;
+    border-radius: 4px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    border: 1px solid #D6E9C6;
+
+}
+.rel{
+    position: relative;
+}
