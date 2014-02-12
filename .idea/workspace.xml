@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d1e5013-b6a9-4b2d-b7e2-b2c6702f346a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/AdministratorController.php" afterPath="$PROJECT_DIR$/protected/controllers/AdministratorController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Advert.php" afterPath="$PROJECT_DIR$/protected/models/Advert.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/AdvertController.php" afterPath="$PROJECT_DIR$/protected/controllers/AdvertController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log.1" afterPath="$PROJECT_DIR$/protected/runtime/application.log.1" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log" afterPath="$PROJECT_DIR$/protected/runtime/application.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/advert/create.php" afterPath="$PROJECT_DIR$/protected/views/advert/create.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/advert/edit.php" afterPath="$PROJECT_DIR$/protected/views/advert/edit.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/general.php" afterPath="$PROJECT_DIR$/protected/views/layouts/general.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/administrator/index.php" afterPath="$PROJECT_DIR$/protected/views/administrator/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/advert/index.php" afterPath="$PROJECT_DIR$/protected/views/advert/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/advert/list.php" afterPath="$PROJECT_DIR$/protected/views/advert/list.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="4d1e5013-b6a9-4b2d-b7e2-b2c6702f346a" name="Default" comment="" />
     <ignored path="codeigniter.local.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,7 +71,7 @@
       <file leaf-file-name="index.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/views/advert/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="52" selection-start="125" selection-end="125" vertical-scroll-proportion="0.17005545" vertical-offset="0" max-vertical-offset="541">
+            <state line="10" column="46" selection-start="218" selection-end="218" vertical-scroll-proportion="0.6515581" vertical-offset="0" max-vertical-offset="368">
               <folding />
             </state>
           </provider>
@@ -404,10 +389,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.12037037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29012346" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24940239" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -733,7 +718,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/advert/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="52" selection-start="125" selection-end="125" vertical-scroll-proportion="0.17005545" vertical-offset="0" max-vertical-offset="541">
+        <state line="10" column="46" selection-start="218" selection-end="218" vertical-scroll-proportion="0.6515581" vertical-offset="0" max-vertical-offset="368">
           <folding />
         </state>
       </provider>
