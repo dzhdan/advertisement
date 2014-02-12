@@ -54,7 +54,7 @@
 <?php
     Yii::app()->clientScript->registerScript(
     'myHideEffect',
-    '$(".flash").animate({opacity: 1.0}, 3000).fadeOut("slow");',
+    '$(".flash").hide();$(".flash").fadeIn("2000");$(".flash").animate({opacity: 1.0}, 2000).fadeOut("slow");',
     CClientScript::POS_READY
 );
 ?>

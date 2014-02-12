@@ -2,7 +2,7 @@
 /* @var $this AdvertController */
 ?>
 <h3><?= $model->title ?></h3>
-<p><?= $model->create_date ?></p>
+<p><?= DateFormatter::strToDate($model->create_date) ?></p>
 <div>
     <?= $model->text ?>
 </div>

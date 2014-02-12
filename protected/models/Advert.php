@@ -20,6 +20,7 @@
 class Advert extends CActiveRecord
 {
     public $categoryId;
+    public $autoId;
 	/**
 	 * @return string the associated database table name
 	 */
@@ -35,6 +36,7 @@ class Advert extends CActiveRecord
 			array('title, image_url', 'length', 'max'=>255),
 			array('title', 'required', 'message'=>'Пожалуйста заполните заголовок'),
 			array('text', 'required', 'message'=>'Пожалуйста заполните текст'),
+			array('category_id', 'required', 'message'=>'Пожалуйста выберите категорию'),
 			array('create_date, text, category_id', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
@@ -140,6 +142,7 @@ class Advert extends CActiveRecord
     {
         $criteria = new CDbCriteria;
         $criteria->condition = "user_id = " .Yii::app()->user->user_id ;
+        $criteria->addCondition('deleted = 0');
         $sort = new CSort();
         $sort->attributes = array(
             'articleCount'=>array(

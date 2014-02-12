@@ -7,7 +7,7 @@
     margin-right: 0px;
 }
 .advert-main{
-    min-height: 80px;
+    min-height: 200px;
 }
 h5 a{
     color: inherit;
@@ -40,4 +40,7 @@ div.flash{
 }
 .rel{
     position: relative;
+}
+.errorMessage{
+    color:red;
 }

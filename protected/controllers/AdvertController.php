@@ -20,7 +20,7 @@ class AdvertController extends Controller
                 'actions' => array('edit', 'publish'),
             ),
             array('deny',
-                'actions' => array('edit', 'publish'),
+                'actions' => array('publish'),
                 'roles' => array('guest'),
             ),
             /*array('allow',
@@ -76,8 +76,11 @@ class AdvertController extends Controller
             $model->attributes = $_POST['Advert'];
             if($model->save()){
                 Yii::app()->user->setFlash('success', "Обьявление добавлено успешно!");
+                $this->redirect('/advert/create');
             }
         }
+
+
 
         $this->render('create', array(
             'model' => $model,
@@ -85,14 +88,59 @@ class AdvertController extends Controller
         ));
     }
 
+    public function actionAjaxupdate()
+    {
+        $act = $_GET['act']['autoId'];
+        var_dump($act);
+        /*if($act=='doSortOrder')
+        {
+            $sortOrderAll = $_POST['sortOrder'];
+            if(count($sortOrderAll)>0)
+            {
+                foreach($sortOrderAll as $menuId=>$sortOrder)
+                {
+                    $model=$this->loadModel($menuId);
+                    $model->sortOrder = $sortOrder;
+                    $model->save();
+                }
+            }
+        }
+        else
+        {
+            $autoIdAll = $_POST['autoId'];
+            if(count($autoIdAll)>0)
+            {
+                foreach($autoIdAll as $autoId)
+                {
+                    $model=$this->loadModel($autoId);
+                    if($act=='doDelete')
+                        $model->deleted = '1';
+                    if($act=='doActive')
+                        $model->isActive = '1';
+                    if($act=='doInactive')
+                        $model->isActive = '0';
+                    if($model->save())
+                        echo 'ok';
+                    else
+                        throw new Exception("Sorry",500);
+
+                }
+            }
+        }*/
+    }
+
     public function actionEdit($id)
     {
         $advert = Advert::model()->loadAdvert($id);
+        if($advert->user_id!==Yii::app()->user->user_id) throw new CHttpException('404', 'Acess denied');
+
         if (isset($_POST['Advert'])) {
 
             $advert->attributes = $_POST['Advert'];
-            $advert->save();
-
+            $advert->pub_status = 1;
+            if($advert->save()){
+                Yii::app()->user->setFlash('success', "Обьявление обновлено успешно!");
+            }
         }
 
         $categories = Category::model()->loadAllCategory();
@@ -109,8 +157,20 @@ class AdvertController extends Controller
         }
     }
 
+    public function actionDelete($id){
+        $model = $this->loadModel($id);
+        $model->deleted = 1;
+        if($model->save()){
+            Yii::app()->user->setFlash('success', "Form posted!");
+        }
+
+    }
+
     public function actionList()
     {
+        if(Yii::app()->user->isGuest){
+            $this->redirect(Yii::app()->getBaseUrl(true));
+        }
         $model = new Advert('search');
         $this->render('list', array('model' => $model));
     }

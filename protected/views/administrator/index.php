@@ -6,13 +6,23 @@ $this->breadcrumbs=array(
 );
 ?>
 <div class="row col-md-12">
+    <?php $form=$this->beginWidget('CActiveForm', array(
+        'enableAjaxValidation'=>true,
+    )); ?>
     <?php
     $this->widget('zii.widgets.grid.CGridView', array(
         'dataProvider'=>$model->search(),
+        'ajaxUpdate'=>'true',
         'itemsCssClass' => 'table table-striped',
         'htmlOptions'=>array('class'=>'table','id'=>'item-grid'),
         'filter'=>$model,
         'columns'=>array(
+            array(
+                'id'=>'autoId',
+                'class'=>'CCheckBoxColumn',
+                'selectableRows' => '50',
+            ),
+
             array(
                 'name'=>'id',
                 'value'=>'$data->id',
@@ -55,10 +65,17 @@ $this->breadcrumbs=array(
                     ),
                 ),
                 'template'=>'{publish}',
-            )
+            ),
         )
     ));
     ?>
+    <script>
+        function reloadGrid(data) {
+            $.fn.yiiGridView.update('menu-grid');
+        }
+    </script>
+    <?php echo CHtml::ajaxSubmitButton('Delete',array('advert/ajaxupdate','act'=>'doDelete'), array('success'=>'reloadGrid')); ?>
+    <?php $this->endWidget(); ?>
 </div>
 </div>
 

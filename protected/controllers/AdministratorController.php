@@ -12,6 +12,18 @@ class AdministratorController extends Controller
         if(isset($_GET['Advert'])){
             $model->attributes=$_GET['Advert'];
         }
+        if(isset($_GET['checkedIds'])){
+            $chkArray=explode(",", $_GET['checkedIds']);
+            foreach ($chkArray as $arow){
+                Yii::app()->user->setState($arow,1);
+            }
+        }
+        if(isset($_GET['uncheckedIds'])){
+            $unchkArray=explode(",", $_GET['uncheckedIds']);
+            foreach ($unchkArray as $arownon){
+                Yii::app()->user->setState($arownon,0);
+            }
+        }
         $this->render('index', array('model'=>$model));
 	}
 

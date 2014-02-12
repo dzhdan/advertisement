@@ -44,6 +44,17 @@
                 ),
                 'template'=>'{edit}',
             ],
+            [
+                'class'=>'CButtonColumn',
+                'header'=>'Удалить',
+                'buttons'=>array(
+                    'delete'=>array(
+                        'label'=>'edit',
+                        'url'   => 'Yii::app()->createUrl(\'advert/delete\',array(\'id\' => $data->id))',
+                    ),
+                ),
+                'template'=>'{delete}',
+            ],
 
         )
     ));
