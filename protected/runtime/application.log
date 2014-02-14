@@ -204,3 +204,19 @@ REQUEST_URI=/advert/
 in /var/www/codeigniter.local/protected/views/advert/index.php (4)
 in /var/www/codeigniter.local/protected/controllers/AdvertController.php (42)
 in /var/www/codeigniter.local/index.php (13)
+2014/02/14 13:59:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/codeigniter.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/codeigniter.local/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /var/www/codeigniter.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/codeigniter.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/02/14 13:59:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/codeigniter.local/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/codeigniter.local/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /var/www/codeigniter.local/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /var/www/codeigniter.local/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---

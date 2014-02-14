@@ -1,5 +1,6 @@
 .DS_Store
-
+.idea/
+assets/
 application/cache/*
 !application/cache/index.html
 !application/cache/.htaccess
