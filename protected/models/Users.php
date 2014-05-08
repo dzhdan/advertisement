@@ -9,105 +9,108 @@
  * @property string $email
  * @property string $password
  * @property string $role
- * @property integer $online_status
+ * @property integer $last_activity
+ * @property integer $activation_status
+ * @property integer $activation_key
  * @property integer $deleted
+ *
  */
 class Users extends CActiveRecord
 {
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'users';
-	}
+    public $passwordRepeat;
+    public $verifyCode;
+    public $captcha;
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('online_status, deleted', 'numerical', 'integerOnly'=>true),
-			array('name, email, password, role', 'length', 'max'=>255),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('id, name, email, password, role, online_status, deleted', 'safe', 'on'=>'search'),
-		);
-	}
+    //30*60
+    const LAST_ACTIVITY_TIME = 1800;
 
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-		);
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName()
+    {
+        return 'users';
+    }
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => 'ID',
-			'name' => 'Name',
-			'email' => 'Email',
-			'password' => 'Password',
-			'role' => 'Role',
-			'online_status' => 'Online Status',
-			'deleted' => 'Deleted',
-		);
-	}
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules()
+    {
+        return [
+            ['deleted', 'numerical', 'integerOnly' => true],
+            ['name, email, password, role', 'length', 'max' => 255],
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 *
-	 * Typical usecase:
-	 * - Initialize the model fields with values from filter form.
-	 * - Execute this method to get CActiveDataProvider instance which will filter
-	 * models according to data in model fields.
-	 * - Pass data provider to CGridView, CListView or any similar widget.
-	 *
-	 * @return CActiveDataProvider the data provider that can return the models
-	 * based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+            ['id, name, email, password, role', 'safe', 'on' => 'search'],
 
-		$criteria=new CDbCriteria;
+            ['verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'registration'],
+            ['name, password, passwordRepeat, email', 'required','on'=>'registration'],
+            ['passwordRepeat', 'compare', 'compareAttribute'=>'password','on'=>'registration'],
+            ['name, password, email, role', 'safe', 'on'=>'registration'],
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('name',$this->name,true);
-		$criteria->compare('email',$this->email,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('role',$this->role,true);
-		$criteria->compare('online_status',$this->online_status);
-		$criteria->compare('deleted',$this->deleted);
+        ];
+    }
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
+    /**
+     * @return array relational rules.
+     */
+    public function relations()
+    {
+        return [];
+    }
 
-	/**
-	 * Returns the static model of the specified AR class.
-	 * Please note that you should have this exact method in all your CActiveRecord descendants!
-	 * @param string $className active record class name.
-	 * @return Users the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'name' => 'Name',
+            'email' => 'Email',
+            'password' => 'Password',
+            'role' => 'Role',
+            'deleted' => 'Deleted',
+            'passwordRepeat' => 'Password repeat',
+        ];
+    }
 
-    public function loadModel(){
+
+    public function search()
+    {
+        // @todo Please modify the following code to remove attributes that should not be searched.
+
+        $criteria = new CDbCriteria;
+
+        $criteria->compare('id', $this->id);
+        /*		$criteria->compare('name',$this->name,true);
+                $criteria->compare('email',$this->email,true);
+                $criteria->compare('password',$this->password,true);
+                $criteria->compare('role',$this->role,true);
+                $criteria->compare('online_status',$this->online_status);
+                $criteria->compare('deleted',$this->deleted);*/
+
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
+    }
+
+    public function isUserOnline()
+    {
+        if($this->last_activity + self::LAST_ACTIVITY_TIME  > time()){
+            return true;
+        }
+        return false;
+    }
+
+    public static function model($className = __CLASS__)
+    {
+        return parent::model($className);
+    }
+
+    public function loadModel()
+    {
 
     }
+
 }

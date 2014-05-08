@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
         <?php echo $form->labelEx($model,'text'); ?>
-        <?php echo $form->textArea($model,'text',['class'=>'form-control']); ?>
+        <?php echo $form->textArea($model,'text',['class'=>'form-control', 'id'=>'txtArea']); ?>
         <?php echo $form->error($model,'text'); ?>
     </div>
 <div class="form-group ">
@@ -31,20 +31,21 @@
 </div>
 
 <?php $this->endWidget(); ?>
+    <script>
+        function onTestChange() {
+            var key = window.event.keyCode;
+
+            // If the user has pressed enter
+            if (key == 13) {
+                document.getElementById("txtArea").value =document.getElementById("txtArea").value + "\n*";
+                return false;
+            }
+            else {
+                return true;
+            }
+        }
+    </script>
 </div>
-<!--<div class="form-group  col-md-4">
-<div>Заголовок</div>
-    <input type="text" name='<?/*= get_class($model)*/?>[title]' class="form-control"  placeholder="Введите заголовок"/>
-    <select name="<?/*= get_class($model)*/?>[category_id]" class="form-control"  >
-        <?php /*foreach($categories as $category) :*/?>
-            <option value="<?/*=$category['id']*/?>"><?/*=$category['ru_title']*/?></option>
-        <?php /*endforeach;*/?>
-    </select>
-    <div>Текст</div>
-    <textarea name="<?/*= get_class($model)*/?>[text]" id="" cols="30" class="form-control"6 rows="10"></textarea>
-    <div class=" buttons">
-        <?php /*echo CHtml::submitButton('submit'); */?>
-    </div>
-</div>-->
+
 
     

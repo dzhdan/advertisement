@@ -1,81 +1,127 @@
-<?php
-/* @var $this AdministratorController */
 
-$this->breadcrumbs=array(
-	'Administrator',
-);
-?>
-<div class="row col-md-12">
-    <?php $form=$this->beginWidget('CActiveForm', array(
+<div  class="border row col-md-12">
+    <div class="wrap">
+    <?php $form=$this->beginWidget('CActiveForm', [
         'enableAjaxValidation'=>true,
-    )); ?>
+    ]);
+    ?>
+
     <?php
+        echo CHtml::ajaxSubmitButton('Delete', ['advert/ajaxdelete'],
+        ['success'=>'reloadGrid'],
+        ['class'=>'btn delete_button btn-default btn-sm ',]);
+    ?>
+<?php
     $this->widget('zii.widgets.grid.CGridView', array(
         'dataProvider'=>$model->search(),
+       'summaryText'=>false,
+       'htmlOptions'=>[
+           'id'=>'menu-grid',
+
+       ],
         'ajaxUpdate'=>'true',
         'itemsCssClass' => 'table table-striped',
-        'htmlOptions'=>array('class'=>'table','id'=>'item-grid'),
+
         'filter'=>$model,
-        'columns'=>array(
-            array(
+
+        'columns'=>[
+            [
                 'id'=>'autoId',
                 'class'=>'CCheckBoxColumn',
                 'selectableRows' => '50',
-            ),
-
-            array(
+                'checkBoxHtmlOptions'=>[
+                    'class'=>'deleted_checkbox'
+                ],
+                'headerHtmlOptions'=>[
+                    'class'=>'deleted_checkbox'
+                ],
+            ],
+            [
                 'name'=>'id',
-                'value'=>'$data->id',
-                'htmlOptions'=>array(
-                    'width'=>'40px'
-                )
-            ),
-            array(
+                'headerHtmlOptions'=>[
+                    'class'=>'px'
+                ],
+                'filter'=>CHtml::textField('Advert[id]', '', ['class'=>'form-control id-input']),
+            ],
+            [
                 'name'=>'category_id',
                 'value'=>'$data->category->ru_title',
                 'filter'=>CHtml::dropDownList('Advert[category_id]',
                     $model->category_id,
                         CHtml::listData( Category::model()->loadAllCategory(),'id','ru_title'),
-                    array(
+                    [
                         'empty' => 'Все',
-                    )
+                        'class'=>'form-control',
+                    ]
                 ),
-            ),
-            'title',
-            'text',
-            array(
+            ],
+            [
+                'name'=>'title',
+                'filter'=>CHtml::textField('Advert[title]', '', ['class'=>'form-control']),
+            ],
+            [
+                'name'=>'text',
+                'filter'=>CHtml::textField('Advert[text]', '', ['class'=>'form-control']),
+            ],
+           [
                 'class'=>'CButtonColumn',
                 'header'=>'Edit',
-                'buttons'=>array(
-                    'edit'=>array(
+                'buttons'=>[
+                    'edit'=>[
                         'label'=>'edit',
                         'url'   => 'Yii::app()->createUrl(\'advert/edit\',array(\'id\' => $data->id))',
-                    ),
-                ),
+                    ],
+                ],
                 'template'=>'{edit}',
-            ),
-            array(
-                'class'=>'CButtonColumn',
-                'header'=>'Publish',
-                'buttons'=>array(
-                    'publish'=>array(
-                        'label'=>'publish',
-                       /* 'imageUrl'=>'images/grid_edit.png',*/
-                        'url'   => 'Yii::app()->createUrl(\'admin/edit\',array(\'id\' => $data->id))',
-                    ),
-                ),
-                'template'=>'{publish}',
-            ),
-        )
+           ],
+           [
+               'class'=>'CButtonColumn',
+               'header'=>'Delete',
+               'buttons'=>[
+                   'delete'=>[
+                       /*'label'=>'delete',*/
+                       'url'   => 'Yii::app()->createUrl(\'/advert/delete\', array(\'id\' => $data->id))',
+
+                   ],
+               ],
+               'template'=>'{delete}',
+           ],
+        ]
     ));
     ?>
-    <script>
+   <script>
+        var countChecked;
         function reloadGrid(data) {
+            $('.delete_button').attr('disabled',true)
             $.fn.yiiGridView.update('menu-grid');
         }
+
+       $('.deleted_checkbox').live('change',function(){
+
+           countChecked = $('.deleted_checkbox:checked').length;
+
+           if($('.deleted_checkbox:checked').length > 0){
+               $('.delete_button').attr('disabled',false)
+           }
+
+           else{
+               $('.delete_button').attr('disabled',true)
+           }
+       }).change()
+
+        $('.delete_button').click(function(){
+            var isGood=confirm('\t Are you sure ?\n' + countChecked + ' items will be removed.' );
+            if (!isGood) {
+                return false;
+            }
+        })
+
+
+
     </script>
-    <?php echo CHtml::ajaxSubmitButton('Delete',array('advert/ajaxupdate','act'=>'doDelete'), array('success'=>'reloadGrid')); ?>
     <?php $this->endWidget(); ?>
+    </div>
 </div>
-</div>
+
+
 

@@ -4,7 +4,7 @@
 <h3><?= $model->title ?></h3>
 <p><?= DateFormatter::strToDate($model->create_date) ?></p>
 <div>
-    <?= $model->text ?>
+    <?= nl2br($model->text)?>
 </div>
 
 

@@ -13,4 +13,5 @@ class WebUser extends CWebUser{
         }
         return $this->_model;
     }
+
 }

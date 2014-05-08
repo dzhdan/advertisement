@@ -21,7 +21,7 @@
         </div>
 
         <nav class="navbar navbar-default " role="navigation">
-            <!--<div class="col-md-10"><h2><a href="<?/*= Yii::app()->homeUrl */?>">Городская доска обьявлений</a> </h2></div>-->
+            <div class="col-md-10"><h2><a href="<?= Yii::app()->homeUrl ?>">Городская доска обьявлений</a> </h2></div>
         </nav>
 
         <div class="col-md-3  ">
@@ -39,6 +39,10 @@
                 <?php if (Yii::app()->user->isGuest): ?>
                     <div>
                         <a href="/user/login">Вход</a>
+                    </div>
+                    <div>
+                        <a href="/user/registration">Регистрация</a>
+
                     </div>
                 <?php endif; ?>
             </div>

@@ -35,6 +35,7 @@ $this->pageTitle=Yii::app()->name;
                 </td>
             </tr>
             <tr>
+                <td></td>
                 <td>
                     <?php echo CHtml::submitButton('Login',array('class'=>'form-control')); ?>
                 </td>
