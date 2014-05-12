@@ -163,12 +163,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "8120b3ef8905d33c8b8407017c68e0063656eac3"
+                "reference": "c2395a5bb6a77afd4fb3b2b649c6ef5b47740ba3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/8120b3ef8905d33c8b8407017c68e0063656eac3",
-                "reference": "8120b3ef8905d33c8b8407017c68e0063656eac3",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/c2395a5bb6a77afd4fb3b2b649c6ef5b47740ba3",
+                "reference": "c2395a5bb6a77afd4fb3b2b649c6ef5b47740ba3",
                 "shasum": ""
             },
             "require": {
@@ -208,7 +208,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2014-04-16 09:04:28"
+            "time": "2014-05-06 13:44:45"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -267,12 +267,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii.git",
-                "reference": "9e68cc00a3e1125ee84dcc2fc5d31c76b375d845"
+                "reference": "0b68946662f361624af3cd88317c187a1dde7b9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii/zipball/9e68cc00a3e1125ee84dcc2fc5d31c76b375d845",
-                "reference": "9e68cc00a3e1125ee84dcc2fc5d31c76b375d845",
+                "url": "https://api.github.com/repos/yiisoft/yii/zipball/0b68946662f361624af3cd88317c187a1dde7b9b",
+                "reference": "0b68946662f361624af3cd88317c187a1dde7b9b",
                 "shasum": ""
             },
             "require": {
@@ -343,15 +343,11 @@
                 "framework",
                 "yii"
             ],
-            "time": "2014-04-17 14:52:00"
+            "time": "2014-05-03 17:21:08"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
         "phpmailer/phpmailer": 20,
@@ -360,7 +356,5 @@
     "platform": {
         "php": ">=5.1.0"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": []
 }

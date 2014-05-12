@@ -53,15 +53,11 @@ class UserController extends Controller
     public function actionRegistration()
     {
         $newUser = new Users('registration');
+
         if (isset($_POST['Users'])) {
             $newUser->attributes = $_POST['Users'];
-            $newUser->role = 'user';
-            $newUser->activation_status = 0;
-            $newUser->activation_key = sha1(mt_rand(10000, 99999) . time() . $newUser->email);
 
-            if ($newUser->validate() && $newUser->save()) {
-                $mail = new Mailer();
-                $mail->registrationMail($newUser->email, $newUser->activation_key);
+            if ($newUser->registration($_POST['Users'])) {
                 $this->redirect('succesfullregistration');
             }
         }

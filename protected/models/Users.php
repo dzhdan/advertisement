@@ -24,6 +24,8 @@ class Users extends CActiveRecord
     //30*60
     const LAST_ACTIVITY_TIME = 1800;
 
+    const ROLE_USER = 'user';
+
     /**
      * @return string the associated database table name
      */
@@ -101,6 +103,24 @@ class Users extends CActiveRecord
             return true;
         }
         return false;
+    }
+
+    public function registration($data)
+    {
+
+        $this->attributes = $data;
+        $this->role = self::ROLE_USER;
+        $this->activation_status = 0;
+        $this->activation_key = sha1(mt_rand(10000, 99999) . time() . $this->email);
+
+        if (!$this->validate() && !$this->save()) {
+            return false;
+        }
+
+        $mail = new Mailer();
+        $mail->registrationMail($this->email, $this->activation_key);
+
+        return true;
     }
 
     public static function model($className = __CLASS__)
