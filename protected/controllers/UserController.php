@@ -29,24 +29,16 @@ class UserController extends Controller
             Yii::app()->end();
         }
 
-        // collect user input data
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
-            // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login()) {
-
-                Yii::app()->session->add('test', 1);
-
                 if (Yii::app()->user->role == self::ROLE_ADMIN) {
                     $this->redirect('/administrator/');
                 } else {
-
                     $this->redirect(Yii::app()->user->returnUrl);
                 }
             }
         }
-
-        // display the login form
 
         $this->render('login', array('model' => $model));
     }
@@ -54,15 +46,12 @@ class UserController extends Controller
 
     public function actionLogout()
     {
-
         Yii::app()->user->logout();
         $this->redirect(Yii::app()->getHomeUrl());
-
     }
 
     public function actionRegistration()
     {
-
         $newUser = new Users('registration');
         if (isset($_POST['Users'])) {
             $newUser->attributes = $_POST['Users'];
