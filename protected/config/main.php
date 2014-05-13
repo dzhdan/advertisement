@@ -47,12 +47,13 @@ return array(
             // enable cookie-based authentication
             'allowAutoLogin' => true,
         ),
-        'bootstrap' => array(
+       /* 'bootstrap' => array(
             'class' => 'bootstrap.components.Bootstrap',
-        ),
+        ),*/
         // uncomment the following to enable URLs in path-format
 
         'urlManager' => array(
+            'class' => 'application.components.UrlManager',
             'urlFormat' => 'path',
             'rules' => array(
                 '<controller:[\w\-]+>/<id:\d+>' => '<controller>/view',

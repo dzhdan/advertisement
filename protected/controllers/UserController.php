@@ -53,7 +53,6 @@ class UserController extends Controller
     public function actionRegistration()
     {
         $newUser = new Users('registration');
-
         if (isset($_POST['Users'])) {
             $newUser->attributes = $_POST['Users'];
 
@@ -64,10 +63,14 @@ class UserController extends Controller
 
         $this->render('registration', ['model' => $newUser]);
     }
+
+
     public function actionSuccesfullRegistration()
     {
         $this->render('succesfull_registration');
     }
+
+    
     // Uncomment the following methods and override them if needed
     /*
     public function filters()
