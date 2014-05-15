@@ -10,47 +10,36 @@ return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'My Web Application',
 
-    // preloading 'log' component
-    'preload' => array('log'),
+    'preload' => ['log'],
 
-    // autoloading model and component classes
-    'import' => array(
+    'import' => [
         'application.models.*',
         'application.components.*',
         'application.helpers.*',
         'application.extensions.*',
-    ),
+        'ext.YiiMailer.YiiMailer',
+    ],
     'theme' => 'bootstrap',
-    'modules' => array(
-        // uncomment the following to enable the Gii tool
-
-        'gii' => array(
+    'modules' => [
+        'gii' => [
             'class' => 'system.gii.GiiModule',
             'password' => '123',
             // If removed, Gii defaults to localhost only. Edit carefully to taste.
-            'ipFilters' => array('127.0.0.1', '::1'),
-        ),
-        'email' => array(
+            'ipFilters' => ['127.0.0.1', '::1'],
+        ],
+        'email' => [
             'class' => 'email.EmailModule',
-            'adminUsers' => array('admin'),
-        ),
-        /*'administrator'=>array(
-            'defaultController' => 'administrator'
-        )*/
+            'adminUsers' => ['admin'],
+        ],
+    ],
 
-
-    ),
-
-    // application components
     'components' => array(
-        'user' => array(
-            // enable cookie-based authentication
+        'user' =>[
             'allowAutoLogin' => true,
-        ),
-        'bootstrap' => array(
+        ],
+        'bootstrap' => [
             'class' => 'bootstrap.components.Bootstrap',
-        ),
-        // uncomment the following to enable URLs in path-format
+        ],
 
         'urlManager' => array(
             'urlFormat' => 'path',
@@ -64,20 +53,20 @@ return array(
             // Будем использовать свой менеджер авторизации
             'class' => 'PhpAuthManager',
             // Роль по умолчанию. Все, кто не админы, модераторы и юзеры — гости.
-            'defaultRoles' => array('guest'),
+            'defaultRoles' => ['guest'],
         ),
         'user' => array(
             'class' => 'WebUser',
-            'loginUrl' => array('/user/login'),
+            'loginUrl' => ['/user/login'],
         ),
-        'db' => array(
+        'db' => [
             'connectionString' => 'mysql:host=localhost;dbname=advert',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',
             'charset' => 'utf8',
-        ),
-        'session'=>array(
+        ],
+        'session'=>[
 
             'class'=>'CDbHttpSession',
 
@@ -85,36 +74,27 @@ return array(
             'timeout' => 600,
             'sessionTableName'=>'yiisession',
 
-        ),
+        ],
 
-        'errorHandler' => array(
+        'errorHandler' => [
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',
-        ),
+        ],
         'log' => array(
             'class' => 'CLogRouter',
-            'routes' => array(
-                array(
+            'routes' => [
+                [
                     'class' => 'CFileLogRoute',
                     'levels' => 'error, warning',
-                ),
+                ],
                 // uncomment the following to show log messages on web pages
                 /*
                 array(
                     'class'=>'CWebLogRoute',
                 ),
                 */
-            ),
+            ],
         ),
-        'emailManager' => array(
-            'class' => 'email.components.EEmailManager',
-            'fromEmail' => 'webmaster@your.dom.ain',
-        ),
-
-    ),
-    'aliases' => array(
-        'vendor' => 'webroot.vendor',
-        'email' => 'webroot.vendor.cornernote.yii-email-module.email',
     ),
     // application-level parameters that can be accessed
     // using Yii::app()->params['paramName']

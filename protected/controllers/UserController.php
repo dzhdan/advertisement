@@ -68,6 +68,10 @@ class UserController extends Controller
     {
         $this->render('succesfull_registration');
     }
+    public function actionMail()
+    {
+        mail('erwfg@mailforspam.com', 'gas', 'fgasg');
+    }
     // Uncomment the following methods and override them if needed
     /*
     public function filters()

@@ -107,7 +107,6 @@ class Users extends CActiveRecord
 
     public function registration($data)
     {
-
         $this->attributes = $data;
         $this->role = self::ROLE_USER;
         $this->activation_status = 0;

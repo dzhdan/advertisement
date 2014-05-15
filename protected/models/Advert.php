@@ -73,7 +73,7 @@ class Advert extends CActiveRecord
 
     public function defaultScope()
     {
-        return ['condition' => "deleted = '0'"];
+        return ['condition' => "deleted = '0' AND pub_status = 1"];
     }
 
 
@@ -105,7 +105,7 @@ class Advert extends CActiveRecord
         $criteria->compare('category_id', $this->category_id);
         $criteria->compare('pub_status', $this->pub_status);
 
-        $criteria->addSearchCondition('pub_status', '1');
+        $criteria->addSearchCondition('pub_status', '0');
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -121,9 +121,9 @@ class Advert extends CActiveRecord
         $criteria->compare('title', $this->title, true);
         $criteria->compare('text', $this->text, true);
         $criteria->compare('category_id', $this->category_id);
-        $criteria->compare('pub_status', $this->pub_status);
 
         $criteria->addSearchCondition('edited', '1');
+        $criteria->addSearchCondition('pub_status', '1');
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -134,8 +134,8 @@ class Advert extends CActiveRecord
     {
         $criteria = new CDbCriteria();
         $criteria->condition = 'deleted = 0';
-        $criteria->addCondition("category_id = '$id' AND pub_status = '0' ");
-        $criteria->addCondition("pub_status = '0'");
+        $criteria->addCondition("category_id = '$id' AND pub_status = '1' ");
+        $criteria->addCondition("pub_status = '1'");
         $data = Advert::model()->findAll($criteria);
         return $data;
     }
@@ -149,7 +149,7 @@ class Advert extends CActiveRecord
     public function getNewAdverts()
     {
         $criteria = new CDbCriteria();
-        $criteria->condition = 'pub_status = 1';
+        $criteria->condition = 'pub_status = 0';
 
         $dataProvider = new CActiveDataProvider('Advert', array(
             'criteria' => $criteria
@@ -160,7 +160,7 @@ class Advert extends CActiveRecord
     public function getCountNewAdverts()
     {
         $criteria = new CDbCriteria();
-        $criteria->condition = 'pub_status = 1';
+        $criteria->condition = 'pub_status = 0';
 
         $count = Advert::model()->count($criteria);
         return $count;
@@ -178,7 +178,7 @@ class Advert extends CActiveRecord
     public function getCountEditedAdverts()
     {
         $criteria = new CDbCriteria();
-        $criteria->condition = 'pub_status = 0 AND edited = 1';
+        $criteria->condition = 'pub_status = 1 AND edited = 1';
 
         $count = Advert::model()->count($criteria);
         return $count;
@@ -218,9 +218,20 @@ class Advert extends CActiveRecord
 
     public function publish()
     {
-        $this->pub_status = 0;
+        $this->pub_status = 1;
         $this->save();
         return true;
+    }
+
+    public static function getEditedCount()
+    {
+        $model = new self('search');
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'pub_status = 1 AND edited = 1  ';
+
+        $count = $model->count($criteria);
+
+        return $count;
     }
 
     public function loadAdvert($id)

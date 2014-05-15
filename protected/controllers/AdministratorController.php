@@ -39,10 +39,7 @@ class AdministratorController extends Controller
     {
         $model = new Advert('search');
 
-        $criteria = new CDbCriteria();
-        $criteria->condition = 'pub_status = 0 AND edited = 1';
-
-        $count = $model->count($criteria);
+        $count = $model::getEditedCount();
         $model->unsetAttributes();
 
         if (isset($_GET['Advert'])) {
@@ -51,7 +48,7 @@ class AdministratorController extends Controller
         if ($count == 0) {
             $this->redirect('/administrator');
         }
-        $this->render('/advert/edited_adverts', array('model' => $model, 'count' => $count));
+        $this->render('/advert/edited_adverts', ['model' => $model, 'count' => $count ]);
     }
 
     public function actionUsers()
