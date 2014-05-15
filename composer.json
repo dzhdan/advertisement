@@ -3,8 +3,7 @@
         "vendor-dir": "protected/vendor"
     },
     "require": {
-        "php": ">=5.1.0",
-        "cornernote/yii-email-module": "*",
+        "php": ">=5.4.0",
         "phpmailer/phpmailer": "dev-master",
         "yiisoft/yii": "dev-master"
     }

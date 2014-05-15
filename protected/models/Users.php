@@ -45,10 +45,10 @@ class Users extends CActiveRecord
 
             ['id, name, email, password, role', 'safe', 'on' => 'search'],
 
-            ['verifyCode', 'captcha', 'allowEmpty'=>!CCaptcha::checkRequirements(), 'on'=>'registration'],
-            ['name, password, passwordRepeat, email', 'required','on'=>'registration'],
-            ['passwordRepeat', 'compare', 'compareAttribute'=>'password','on'=>'registration'],
-            ['name, password, email, role', 'safe', 'on'=>'registration'],
+            ['verifyCode', 'captcha', 'allowEmpty' => !CCaptcha::checkRequirements(), 'on' => 'registration'],
+            ['name, password, passwordRepeat, email', 'required', 'on' => 'registration'],
+            ['passwordRepeat', 'compare', 'compareAttribute' => 'password', 'on' => 'registration'],
+            ['name, password, email, role', 'safe', 'on' => 'registration'],
 
         ];
     }
@@ -99,7 +99,7 @@ class Users extends CActiveRecord
 
     public function isUserOnline()
     {
-        if($this->last_activity + self::LAST_ACTIVITY_TIME  > time()){
+        if ($this->last_activity + self::LAST_ACTIVITY_TIME > time()) {
             return true;
         }
         return false;
