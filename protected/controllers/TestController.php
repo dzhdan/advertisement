@@ -2,21 +2,6 @@
 
 class TestController extends Controller
 {
-private $quotes = [['qwe'],['qwfd'],['ags']];
-    public function actionIndex()
-    {
-       $this->render('index',['quote' => $this->getRandomQuote()]);
-
-    }
-    public  function actionGetQuote()
-    {
-        $this->renderPartial('_quote',['quote' =>$this->getRandomQuote()]);
-    }
-
-    private function getRandomQuote()
-    {
-        return $this->quotes[array_rand($this->quotes,1)];
-    }
 
     public function actionWords()
     {
