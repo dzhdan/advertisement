@@ -2,30 +2,31 @@
 
 class TestController extends Controller
 {
+private $quotes = [['qwe'],['qwfd'],['ags']];
     public function actionIndex()
     {
-        $arr = [4, 8, 1, 7, 2];
-        $g = count($arr);
+       $this->render('index',['quote' => $this->getRandomQuote()]);
 
-        for($i = 0; $i < $g - 1; $i++){
-            for($j = 0; $j < $g -$i- 1; $j++){
-                if($arr[$j] > $arr[$j + 1]){
-                    list($arr[$j],$arr[$j + 1] ) = [$arr[$j + 1], $arr[$j]];
-                }
-            }
-        }
+    }
+    public  function actionGetQuote()
+    {
+        $this->renderPartial('_quote',['quote' =>$this->getRandomQuote()]);
+    }
 
-        var_dump($arr);
-
+    private function getRandomQuote()
+    {
+        return $this->quotes[array_rand($this->quotes,1)];
     }
 
     public function actionWords()
     {
 
-        $arr = ["салат", 'рана', "манка", "анар", "ласат", "нара","ыв","ромб", "тсала", "омбр","каман"];
+        $arr = ["ыв","салат", 'рана', "манка", "анар", "ласат",  "ор","тсала", "омбр","ро","каман","ро","ро","нара",'ро',"ромб", ];
 
-        for($j = 0; $j < count($arr) - 1 ; $j ++){
-            for($i = $j+1; $i < count($arr) -1; $i ++){
+        $counter = 0;
+
+        for($j = 0; $j < count($arr) ; $j ++){
+            for($i = $j+1; $i < count($arr); $i ++){
                 if($this->getAbc($arr[$j]) === $this->getAbc($arr[$i])){
                     list($arr[$j +1],$arr[$i] ) = [$arr[$i ],$arr[$j + 1]  ];
                     break;
@@ -34,7 +35,24 @@ class TestController extends Controller
         }
 
         var_dump($arr);
+        var_dump($counter);
 
+
+    }
+    public function actionDef()
+    {
+        $str = "abcdefgh";
+        $arr = str_split($str);
+
+        $count = count($arr);
+
+        for($i = 0;$i <3; $i ++){
+           $arr[$count + 1 ] = $arr[$i];
+            $arr[$i] = $arr[$i +1];
+            $count++;
+            unset($arr[$i]);
+        }
+     var_dump( $arr)  ;
     }
 
     public function getAbc($word)

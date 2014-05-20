@@ -36,18 +36,12 @@ return array(
     'components' => array(
         'user' =>[
             'allowAutoLogin' => true,
-<<<<<<< HEAD
+
         ],
         'bootstrap' => [
             'class' => 'bootstrap.components.Bootstrap',
         ],
-=======
-        ),
-       /* 'bootstrap' => array(
-            'class' => 'bootstrap.components.Bootstrap',
-        ),*/
-        // uncomment the following to enable URLs in path-format
->>>>>>> c4a206daf65dd0c3f26ec0fac4e99ee5d539c971
+
 
         'urlManager' => array(
             'class' => 'application.components.UrlManager',

@@ -5079,3 +5079,338 @@ REQUEST_URI=/test/words
 in /var/www/codeigniter/protected/controllers/TestController.php (62)
 in /var/www/codeigniter/protected/controllers/TestController.php (29)
 in /var/www/codeigniter/index.php (14)
+2014/05/15 15:28:26 [error] [php] Undefined offset: 0 (/var/www/codeigniter/protected/controllers/TestController.php:30)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (30)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 15:40:24 [error] [php] Undefined offset: 0 (/var/www/codeigniter/protected/controllers/TestController.php:31)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (31)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 15:53:16 [error] [php] Undefined offset: 0 (/var/www/codeigniter/protected/controllers/TestController.php:32)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (32)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 15:53:24 [error] [php] Undefined offset: 0 (/var/www/codeigniter/protected/controllers/TestController.php:32)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (32)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:04:21 [error] [php] Undefined offset: 4 (/var/www/codeigniter/protected/controllers/TestController.php:33)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (33)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:04:22 [error] [php] Undefined offset: 4 (/var/www/codeigniter/protected/controllers/TestController.php:33)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (33)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:15:19 [error] [php] Undefined variable: y (/var/www/codeigniter/protected/controllers/TestController.php:47)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (47)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:16:56 [error] [php] Undefined offset: 1 (/var/www/codeigniter/protected/controllers/TestController.php:33)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (33)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:16:57 [error] [php] Undefined offset: 1 (/var/www/codeigniter/protected/controllers/TestController.php:33)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (33)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:17:07 [error] [php] Undefined offset: 1 (/var/www/codeigniter/protected/controllers/TestController.php:33)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (33)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:17:08 [error] [php] Undefined offset: 1 (/var/www/codeigniter/protected/controllers/TestController.php:33)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (33)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:24:47 [error] [php] Undefined variable: t (/var/www/codeigniter/protected/controllers/TestController.php:43)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (43)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:24:51 [error] [php] Undefined variable: t (/var/www/codeigniter/protected/controllers/TestController.php:43)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#5 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/words
+in /var/www/codeigniter/protected/controllers/TestController.php (43)
+in /var/www/codeigniter/index.php (14)
+2014/05/15 16:57:06 [error] [php] explode(): Empty delimiter (/var/www/codeigniter/protected/controllers/TestController.php:46)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/def
+in /var/www/codeigniter/protected/controllers/TestController.php (46)
+in /var/www/codeigniter/index.php (14)
+2014/05/19 13:13:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/codeigniter/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/05/19 13:13:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#2 /var/www/codeigniter/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/05/19 13:26:27 [error] [exception.CException] exception 'CException' with message 'TestController cannot find the requested view "_quote".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/codeigniter/protected/controllers/TestController.php(13): CController->renderPartial('_quote', Array)
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionGetQuote()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): CController->run('getQuote')
+#6 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('test/getQuote')
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/codeigniter/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/test/get-quote?_=1400491586989
+HTTP_REFERER=http://codeigniter.local/test/
+---
+2014/05/19 13:26:28 [error] [exception.CException] exception 'CException' with message 'TestController cannot find the requested view "_quote".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/codeigniter/protected/controllers/TestController.php(13): CController->renderPartial('_quote', Array)
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionGetQuote()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): CController->run('getQuote')
+#6 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('test/getQuote')
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/codeigniter/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/test/get-quote?_=1400491588394
+HTTP_REFERER=http://codeigniter.local/test/
+---
+2014/05/19 13:26:29 [error] [exception.CException] exception 'CException' with message 'TestController cannot find the requested view "_quote".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/codeigniter/protected/controllers/TestController.php(13): CController->renderPartial('_quote', Array)
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionGetQuote()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): CController->run('getQuote')
+#6 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('test/getQuote')
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/codeigniter/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/test/get-quote?_=1400491588993
+HTTP_REFERER=http://codeigniter.local/test/
+---
+2014/05/19 13:26:29 [error] [exception.CException] exception 'CException' with message 'TestController cannot find the requested view "_quote".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/codeigniter/protected/controllers/TestController.php(13): CController->renderPartial('_quote', Array)
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionGetQuote()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): CController->run('getQuote')
+#6 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('test/getQuote')
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/codeigniter/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/test/get-quote?_=1400491589294
+HTTP_REFERER=http://codeigniter.local/test/
+---
+2014/05/19 13:26:29 [error] [exception.CException] exception 'CException' with message 'TestController cannot find the requested view "_quote".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/codeigniter/protected/controllers/TestController.php(13): CController->renderPartial('_quote', Array)
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionGetQuote()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): CController->run('getQuote')
+#6 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('test/getQuote')
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/codeigniter/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/test/get-quote?_=1400491589494
+HTTP_REFERER=http://codeigniter.local/test/
+---
+2014/05/19 13:26:50 [error] [exception.CException] exception 'CException' with message 'TestController cannot find the requested view "_quote".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/codeigniter/protected/controllers/TestController.php(13): CController->renderPartial('_quote', Array)
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionGetQuote()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): CController->run('getQuote')
+#6 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('test/getQuote')
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/codeigniter/index.php(14): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php/test/get-quote?_=1400491610599
+HTTP_REFERER=http://codeigniter.local/test/
+---
+2014/05/19 13:35:52 [error] [exception.CException] exception 'CException' with message 'TestController and its behaviors do not have a method or closure named "getRandomQoute".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/codeigniter/protected/views/test/index.php(3): CComponent->__call('getRandomQoute', Array)
+#1 /var/www/codeigniter/protected/views/test/index.php(3): TestController->getRandomQoute()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CBaseController.php(126): require('/var/www/codeig...')
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/codeig...', Array, true)
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/codeig...', Array, true)
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /var/www/codeigniter/protected/controllers/TestController.php(8): CController->render('index', Array)
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionIndex()
+#8 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('test')
+#13 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/codeigniter/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/test/
+---
+2014/05/19 13:36:07 [error] [exception.CException] exception 'CException' with message 'TestController and its behaviors do not have a method or closure named "getRandomQuote".' in /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/codeigniter/protected/views/test/index.php(3): CComponent->__call('getRandomQuote', Array)
+#1 /var/www/codeigniter/protected/views/test/index.php(3): TestController->getRandomQuote()
+#2 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CBaseController.php(126): require('/var/www/codeig...')
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/codeig...', Array, true)
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/codeig...', Array, true)
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(782): CController->renderPartial('index', Array, true)
+#6 /var/www/codeigniter/protected/controllers/TestController.php(8): CController->render('index', Array)
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionIndex()
+#8 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): CController->run('')
+#12 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('test')
+#13 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#14 /var/www/codeigniter/index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/test/
+---
+2014/05/19 13:36:40 [error] [php] Array to string conversion (/var/www/codeigniter/protected/views/test/index.php:3)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(869): TestController->renderFile()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(782): TestController->renderPartial()
+#2 /var/www/codeigniter/protected/controllers/TestController.php(8): TestController->render()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionIndex()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#6 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#8 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/
+in /var/www/codeigniter/protected/views/test/index.php (3)
+in /var/www/codeigniter/protected/controllers/TestController.php (8)
+in /var/www/codeigniter/index.php (14)
+2014/05/19 13:36:43 [error] [php] Array to string conversion (/var/www/codeigniter/protected/views/test/index.php:3)
+Stack trace:
+#0 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(869): TestController->renderFile()
+#1 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(782): TestController->renderPartial()
+#2 /var/www/codeigniter/protected/controllers/TestController.php(8): TestController->render()
+#3 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/actions/CInlineAction.php(49): TestController->actionIndex()
+#4 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(286): TestController->runAction()
+#6 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CController.php(265): TestController->runActionWithFilters()
+#7 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(282): TestController->run()
+#8 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /var/www/codeigniter/protected/vendor/yiisoft/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#10 /var/www/codeigniter/index.php(14): CWebApplication->run()
+REQUEST_URI=/test/
+in /var/www/codeigniter/protected/views/test/index.php (3)
+in /var/www/codeigniter/protected/controllers/TestController.php (8)
+in /var/www/codeigniter/index.php (14)
