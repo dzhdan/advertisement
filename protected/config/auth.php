@@ -19,6 +19,9 @@ return array(
     'administrator' => array(
         'type' => CAuthItem::TYPE_ROLE,
         'description' => 'Administrator',
+        'children' => array(
+            'user', // унаследуемся от гостя
+        ),
         'bizRule' => null,
         'data' => null
     ),

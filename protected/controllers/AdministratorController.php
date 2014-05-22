@@ -13,7 +13,7 @@ class AdministratorController extends Controller
             $model->attributes = $_GET['Advert'];
         }
 
-        $this->render('index', array('model' => $model));
+        $this->render('index', ['model' => $model]);
     }
 
     public function actionNew()
@@ -32,7 +32,7 @@ class AdministratorController extends Controller
         if ($count == 0) {
             $this->redirect('/administrator');
         }
-        $this->render('/advert/new_adverts', array('model' => $model, 'count' => $count));
+        $this->render('/advert/new_adverts', ['model' => $model, 'count' => $count]);
     }
 
     public function actionEdited()
@@ -60,7 +60,7 @@ class AdministratorController extends Controller
             $model->attributes = $_GET['Users'];
         }
 
-        $this->render('users', array('model' => $model));
+        $this->render('users', ['model' => $model]);
     }
 
     public function actionCategory($id)

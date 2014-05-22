@@ -20,7 +20,7 @@ $this->pageTitle='Обьявления'?>
             <?php foreach($model as $advert): ?>
                 <?php if($advert['category_id'] == $cat['id']) :?>
                     <div>
-                        <a href="/advert/details/<?=$advert['id']?>"><?=$advert['title']?><?=count($advert['category_id'])?></a>
+                        <a href="/advert/<?=$advert['id']?>"><?=$advert['title']?><?=count($advert['category_id'])?></a>
                     </div>
                     <?php if(++$i === $limit){
                              break;

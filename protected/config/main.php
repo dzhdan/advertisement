@@ -6,6 +6,8 @@
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__) . '/../extensions/bootstrap');
+Yii::setPathOfAlias('models', dirname(__FILE__) . '/../models');
+
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'My Web Application',
@@ -42,26 +44,29 @@ return array(
             'class' => 'bootstrap.components.Bootstrap',
         ],
 
-
-        'urlManager' => array(
+        'urlManager' => [
             'class' => 'application.components.UrlManager',
             'urlFormat' => 'path',
-            'rules' => array(
+            'rules' => [
+                'user/activation/<activation:>' => 'user/activation/',
+
                 '<controller:[\w\-]+>/<id:\d+>' => '<controller>/view',
                 '<controller:[\w\-]+>/<action:[\w\-]+>/<id:\d+>' => '<controller>/<action>',
+
                 '<controller:[\w\-]+>/<action:[\w\-]+>' => '<controller>/<action>',
-            ),
-        ),
-        'authManager' => array(
+            ],
+        ],
+        'authManager' => [
             // Будем использовать свой менеджер авторизации
             'class' => 'PhpAuthManager',
             // Роль по умолчанию. Все, кто не админы, модераторы и юзеры — гости.
-            'defaultRoles' => ['guest'],
-        ),
-        'user' => array(
+            'defaultRoles' => ['guest']
+        ],
+        'user' => [
             'class' => 'WebUser',
             'loginUrl' => ['/user/login'],
-        ),
+            'autoUpdateFlash' => false, // add this line to disable the flash counter
+        ],
         'db' => [
             'connectionString' => 'mysql:host=localhost;dbname=advert',
             'emulatePrepare' => true,

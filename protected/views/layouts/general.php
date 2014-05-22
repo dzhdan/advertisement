@@ -12,7 +12,7 @@
 
 <body>
 
-<div class="container ">
+<div class="container-fluid ">
     <div class="row ">
         <div class="rel">
             <?php if (Yii::app()->user->hasFlash('success')): ?>
@@ -20,9 +20,23 @@
             <?php endif; ?>
         </div>
 
-        <nav class="navbar navbar-default " role="navigation">
-            <div class="col-md-10"><h2><a href="<?= Yii::app()->homeUrl ?>">Городская доска обьявлений</a> </h2></div>
-        </nav>
+        <div class="row">
+
+            <div class=" col-md-12" id="header">
+                <div class="col-md-10"><h2><a href="<?/*= Yii::app()->homeUrl */?>">Городская доска обьявлений</a> </h2></div>
+                <!--<ul class="header-menu">
+                    <li>
+                        <a href="/advert/create">Добавить обьявление</a>
+                    </li>
+                    <li>::</li>
+                    <li>
+                        <?php /*if(!Yii::app()->user->isGuest):*/?>
+                            <a href="/user/logout">Выход</a>
+                        <?php /*endif; */?>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
 
         <div class="col-md-3  ">
             <div class="col-md-12 border">

@@ -16,7 +16,9 @@ class Mailer extends CComponent
 
     public function registrationMail($to, $activationCode)
     {
-        $activationLink = CHtml::link($activationCode, Yii::app()->getBaseUrl(true));
+        $activationLink = CHtml::link(Yii::app()->getBaseUrl(true)."/user/activation/".$activationCode,
+            Yii::app()->getBaseUrl(true)."/user/activation/".$activationCode);
+
         $mail = new YiiMailer('registration',
             [
                 'activationLink' => $activationLink,

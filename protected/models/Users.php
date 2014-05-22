@@ -24,19 +24,18 @@ class Users extends CActiveRecord
     //30*60
     const LAST_ACTIVITY_TIME = 1800;
 
+    const DEFAULT_ACTIVATION_STATUS = 0;
+    const ACTIVE_ACTIVATION_STATUS = 0;
+
+    const ROLE_ADMIN = 'administrator';
+    const ROLE_GUEST = 'guest';
     const ROLE_USER = 'user';
 
-    /**
-     * @return string the associated database table name
-     */
     public function tableName()
     {
         return 'users';
     }
 
-    /**
-     * @return array validation rules for model attributes.
-     */
     public function rules()
     {
         return [
@@ -49,6 +48,8 @@ class Users extends CActiveRecord
             ['name, password, passwordRepeat, email', 'required', 'on' => 'registration'],
             ['passwordRepeat', 'compare', 'compareAttribute' => 'password', 'on' => 'registration'],
             ['name, password, email, role', 'safe', 'on' => 'registration'],
+            ['email', 'unique','className' => 'Users',
+                'attributeName' => 'email', 'message' => 'This Email is already in use', 'except' => 'remove',  'on' => 'registration'],
 
         ];
     }
@@ -61,9 +62,6 @@ class Users extends CActiveRecord
         return [];
     }
 
-    /**
-     * @return array customized attribute labels (name=>label)
-     */
     public function attributeLabels()
     {
         return [
@@ -112,14 +110,13 @@ class Users extends CActiveRecord
         $this->activation_status = 0;
         $this->activation_key = sha1(mt_rand(10000, 99999) . time() . $this->email);
 
-        if (!$this->validate() && !$this->save()) {
-            return false;
+        if ($this->validate() && $this->save()) {
+            $mail = new Mailer();
+            $mail->registrationMail($this->email, $this->activation_key);
+            return true;
         }
 
-        $mail = new Mailer();
-        $mail->registrationMail($this->email, $this->activation_key);
-
-        return true;
+        return false;
     }
 
     public static function model($className = __CLASS__)

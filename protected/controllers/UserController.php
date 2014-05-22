@@ -2,7 +2,6 @@
 
 class UserController extends Controller
 {
-    const ROLE_ADMIN = 'administrator';
 
     public function actionIndex()
     {
@@ -22,7 +21,6 @@ class UserController extends Controller
     {
         $model = new LoginForm;
 
-        $this->layout = 'login';
         // if it is ajax validation request
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
             echo CActiveForm::validate($model);
@@ -31,13 +29,23 @@ class UserController extends Controller
 
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
-            if ($model->validate() && $model->login()) {
-                if (Yii::app()->user->role == self::ROLE_ADMIN) {
-                    $this->redirect('/administrator/');
-                } else {
-                    $this->redirect(Yii::app()->user->returnUrl);
+            $user = Users::model()->findByAttributes(['name' => $model->username]);
+
+            if ($user->activation_status != Users::DEFAULT_ACTIVATION_STATUS) {
+
+                if ($model->validate() && $model->login()) {
+                    if (Yii::app()->user->role == Users::ROLE_ADMIN) {
+                        $this->redirect('/administrator/');
+                    } else {
+                        $this->redirect(Yii::app()->user->returnUrl);
+                    }
+
                 }
+
+            } else {
+                $this->redirect('inactive');
             }
+
         }
 
         $this->render('login', array('model' => $model));
@@ -53,24 +61,47 @@ class UserController extends Controller
     public function actionRegistration()
     {
         $newUser = new Users('registration');
+
         if (isset($_POST['Users'])) {
             $newUser->attributes = $_POST['Users'];
 
             if ($newUser->registration($_POST['Users'])) {
-                $this->redirect('succesfullregistration');
+                $this->redirect('succesfull-registration');
             }
         }
 
         $this->render('registration', ['model' => $newUser]);
     }
 
-
     public function actionSuccesfullRegistration()
     {
         $this->render('succesfull_registration');
     }
 
-    // Uncomment the following methods and override them if needed
+    public function actionInactive()
+    {
+        $this->render('accountNoActive');
+    }
+
+    public function actionActivation()
+    {
+        $activationcode = Yii::app()->request->getQuery('activation');
+
+        if (isset($activationcode)) {
+            $model = Users::model()->findByAttributes([
+                'activation_key' => $activationcode
+            ]);
+
+            if ($model->activation_status == Users::DEFAULT_ACTIVATION_STATUS) {
+                $model->activation_status = Users::ACTIVE_ACTIVATION_STATUS;
+                $model->save();
+                $this->redirect(['/user/login', 'withConfirmedActivation' => 1]);
+            } else {
+                $this->redirect(Yii::app()->homeUrl);
+            }
+        }
+    }
+
     /*
     public function filters()
     {

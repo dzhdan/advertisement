@@ -6,6 +6,12 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
+<?php
+    if(Yii::app()->request->getQuery('withConfirmedActivation')){
+        $this->renderPartial('_confirmedActivation');
+    }
+?>
+
 <div class="form-group">
     <?php $form=$this->beginWidget('CActiveForm', array(
         'id'=>'login-form',

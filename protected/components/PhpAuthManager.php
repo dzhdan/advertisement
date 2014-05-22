@@ -5,6 +5,7 @@ class PhpAuthManager extends CPhpAuthManager{
             $this->authFile=Yii::getPathOfAlias('application.config.auth').'.php';
         }
         parent::init();
+
         if(!Yii::app()->user->isGuest){
             $this->assign(Yii::app()->user->role, Yii::app()->user->id);
         }

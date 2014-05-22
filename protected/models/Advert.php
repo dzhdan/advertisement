@@ -23,6 +23,9 @@ class Advert extends CActiveRecord
     public $categoryId;
     public $autoId;
 
+    const ADVERT_IS_DELETED_STATUS = 1;
+    const ADVERT_IS_ACTIVE_STATUS = 0;
+
     /**
      * @return string the associated database table name
      */
@@ -133,7 +136,7 @@ class Advert extends CActiveRecord
     public function loadAdvertsFromCategories($id)
     {
         $criteria = new CDbCriteria();
-        $criteria->condition = 'deleted = 0';
+/*        $criteria->condition = 'deleted = 0';*/
         $criteria->addCondition("category_id = '$id' AND pub_status = '1' ");
         $criteria->addCondition("pub_status = '1'");
         $data = Advert::model()->findAll($criteria);
@@ -142,7 +145,7 @@ class Advert extends CActiveRecord
 
     public function loadAdverts($id)
     {
-        $data = Advert::model()->findByAttributes(array('category_id' => $id));
+        $data = Advert::model()->findByAttributes(['category_id' => $id]);
         return $data;
     }
 
@@ -151,9 +154,9 @@ class Advert extends CActiveRecord
         $criteria = new CDbCriteria();
         $criteria->condition = 'pub_status = 0';
 
-        $dataProvider = new CActiveDataProvider('Advert', array(
+        $dataProvider = new CActiveDataProvider('Advert', [
             'criteria' => $criteria
-        ));
+        ]);
         return $dataProvider;
     }
 
@@ -188,7 +191,7 @@ class Advert extends CActiveRecord
     {
         $criteria = new CDbCriteria;
         $criteria->condition = "user_id = " . Yii::app()->user->user_id;
-        $criteria->addCondition('deleted = 0');
+/*        $criteria->addCondition('deleted = 0');*/
         $sort = new CSort();
         $sort->attributes = array(
             'articleCount' => array(
