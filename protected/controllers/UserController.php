@@ -39,7 +39,6 @@ class UserController extends Controller
                     } else {
                         $this->redirect(Yii::app()->user->returnUrl);
                     }
-
                 }
 
             } else {

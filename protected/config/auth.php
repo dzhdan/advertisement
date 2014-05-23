@@ -1,5 +1,11 @@
 <?php
 return array(
+    'edit' => array(
+        'type' => CAuthItem::TYPE_OPERATION,
+        'description' => 'Edit own adverts',
+        'bizRule' => null,
+        'data' => null
+    ),
     'guest' => array(
         'type' => CAuthItem::TYPE_ROLE,
         'description' => 'Guest',
@@ -10,7 +16,7 @@ return array(
         'type' => CAuthItem::TYPE_ROLE,
         'description' => 'User',
         'children' => array(
-            'guest', // унаследуемся от гостя
+            'guest', 'edit'
         ),
         'bizRule' => null,
         'data' => null
@@ -20,9 +26,11 @@ return array(
         'type' => CAuthItem::TYPE_ROLE,
         'description' => 'Administrator',
         'children' => array(
-            'user', // унаследуемся от гостя
+            'user',
         ),
         'bizRule' => null,
         'data' => null
     ),
+
+
 );

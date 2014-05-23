@@ -7,6 +7,7 @@
 // CWebApplication properties can be configured here.
 Yii::setPathOfAlias('bootstrap', dirname(__FILE__) . '/../extensions/bootstrap');
 Yii::setPathOfAlias('models', dirname(__FILE__) . '/../models');
+Yii::setPathOfAlias('db', dirname(__FILE__) . '/../db');
 
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
@@ -19,6 +20,7 @@ return array(
         'application.components.*',
         'application.helpers.*',
         'application.extensions.*',
+        'application.db.*',
         'ext.YiiMailer.YiiMailer',
     ],
     'theme' => 'bootstrap',
@@ -74,6 +76,16 @@ return array(
             'password' => '',
             'charset' => 'utf8',
         ],
+        'testdb'=>array(
+            'class'=>'CDbConnection',
+            'connectionString' => 'mysql:host=localhost;dbname=test_advert',
+            'emulatePrepare' => true,
+            'username' => 'root',
+            'password' => '',
+            'charset' => 'utf8',
+        ),
+
+        /*testdb*/
         'session'=>[
 
             'class'=>'CDbHttpSession',

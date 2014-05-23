@@ -25,7 +25,7 @@ class Users extends CActiveRecord
     const LAST_ACTIVITY_TIME = 1800;
 
     const DEFAULT_ACTIVATION_STATUS = 0;
-    const ACTIVE_ACTIVATION_STATUS = 0;
+    const ACTIVE_ACTIVATION_STATUS = 1;
 
     const ROLE_ADMIN = 'administrator';
     const ROLE_GUEST = 'guest';
@@ -50,6 +50,8 @@ class Users extends CActiveRecord
             ['name, password, email, role', 'safe', 'on' => 'registration'],
             ['email', 'unique','className' => 'Users',
                 'attributeName' => 'email', 'message' => 'This Email is already in use', 'except' => 'remove',  'on' => 'registration'],
+            ['name', 'unique','className' => 'Users',
+                'attributeName' => 'email', 'message' => 'This nickname is already in use', 'except' => 'remove',  'on' => 'registration'],
 
         ];
     }

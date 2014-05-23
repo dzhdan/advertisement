@@ -79,6 +79,9 @@ class Advert extends CActiveRecord
         return ['condition' => "deleted = '0' AND pub_status = 1"];
     }
 
+    public static  function fg(){
+        return false;
+    }
 
     public function search()
     {

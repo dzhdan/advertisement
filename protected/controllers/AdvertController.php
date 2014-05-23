@@ -14,30 +14,37 @@ class AdvertController extends Controller
 
     public function accessRules()
     {
-        return array(
-            /*array('deny',
-                'actions'=>array('create', 'edit'),
-                'users'=>array('?'),
-            ),*/
-            array('allow',
+        $result = [
+            ['allow',
                 'roles' => ['user'],
-                'actions'=>['create','list','delete'],
-            ),
-            array('deny',
-                'users' => ['*'],
-            ),
-            /*array('deny',
-                'actions'=>array('delete'),
-                'users'=>array('*'),
-            ),*/
-        );
+                'actions' => ['list', 'create'],
+            ],
+            ['deny',
+                /*'users' => ['*'],*/
+                'roles' => ['guest'],
+            ],
+        ];
+
+        if (Yii::app()->getRequest()->getQuery('id')) {
+            $advert = Advert::model()->findByAttributes(['id' => Yii::app()->getRequest()->getQuery('id')])->user_id;
+
+            array_unshift($result, ['allow',
+                'roles' => ['user'],
+                'actions' => ['edit', 'delete'],
+                'expression' => "Yii::app()->user->user_id == $advert || Yii::app()->user->role == Users::ROLE_ADMIN",
+            ]);
+        }
+
+        return $result;
     }
+
     public function actionIndex()
     {
         $this->render('index');
     }
 
-    public function actionView($id = null){
+    public function actionView($id = null)
+    {
         $model = $this->loadModel($id);
         $this->render('index', ['model' => $model]);
     }
@@ -69,8 +76,8 @@ class AdvertController extends Controller
         if (isset($_POST['Advert'])) {
             $model->attributes = $_POST['Advert'];
             $model->text = nl2br($model->text);
-            if($model->save()){
-                Yii::app()->user->setFlash('success', Yii::t('main',"Обьявление добавлено успешно!"));
+            if ($model->save()) {
+                Yii::app()->user->setFlash('success', Yii::t('main', "Обьявление добавлено успешно!"));
                 $this->redirect('/advert/create');
             }
         }
@@ -84,14 +91,14 @@ class AdvertController extends Controller
     public function actionEdit($id)
     {
         $advert = Advert::model()->loadAdvert($id);
-/*        if(($advert->user_id !== Yii::app()->user->user_id))
-            throw new CHttpException('404', 'Acess denied');*/
+        /*        if(($advert->user_id !== Yii::app()->user->user_id))
+                    throw new CHttpException('404', 'Acess denied');*/
 
         if (isset($_POST['Advert'])) {
             $advert->attributes = $_POST['Advert'];
-            $advert->edited  = 1;
+            $advert->edited = 1;
 
-            if($advert->save()){
+            if ($advert->save()) {
                 Yii::app()->user->setFlash('success', Yii::t('main', "Обьявление обновлено успешно!"));
             }
         }
@@ -100,9 +107,10 @@ class AdvertController extends Controller
         $this->render('edit', ['model' => $advert, 'categories' => $categories]);
     }
 
-    public function actionEditedConfirm($id){
+    public function actionEditedConfirm($id)
+    {
         $advert = Advert::model()->loadAdvert($id);
-        $advert->edited  = 0;
+        $advert->edited = 0;
         $advert->save();
     }
 
@@ -116,11 +124,12 @@ class AdvertController extends Controller
         }
     }
 
-    public function actionDelete($id){
+    public function actionDelete($id)
+    {
         $model = $this->loadModel($id);
         $model->deleted = 1;
-        if($model->save()){
-           /* Yii::app()->user->setFlash('success', Yii::t('main', "Обьявление успешно удалено"));*/
+        if ($model->save()) {
+            /* Yii::app()->user->setFlash('success', Yii::t('main', "Обьявление успешно удалено"));*/
             echo "gsdf";
         }
 
@@ -128,11 +137,11 @@ class AdvertController extends Controller
 
     public function actionAjaxDelete()
     {
-        if(isset($_POST['autoId']) && count($_POST['autoId']) > 0){
+        if (isset($_POST['autoId']) && count($_POST['autoId']) > 0) {
 
             $data = $_POST['autoId'];
 
-            foreach($data as $id){
+            foreach ($data as $id) {
                 $model = Advert::model()->findByPk($id);
                 $model->deleted = Advert::ADVERT_IS_DELETED_STATUS;
                 $model->save();
@@ -142,7 +151,7 @@ class AdvertController extends Controller
 
     public function actionList()
     {
-        if(Yii::app()->user->isGuest){
+        if (Yii::app()->user->isGuest) {
             $this->redirect(Yii::app()->getBaseUrl(true));
         }
         $model = new Advert('search');
