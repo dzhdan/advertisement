@@ -19,6 +19,10 @@ class AdvertController extends Controller
                 'roles' => ['user'],
                 'actions' => ['list', 'create'],
             ],
+            ['allow',
+                'roles' => ['administrator'],
+                'actions' => ['editedconfirm'],
+            ],
             ['deny',
                 /*'users' => ['*'],*/
                 'roles' => ['guest'],

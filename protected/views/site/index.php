@@ -3,12 +3,13 @@
 
 $this->pageTitle='Обьявления'?>
 
-<div class="row ">
+<div class="row col-md-12 border">
     <div class="col-md-12 text-center">
         <h3>Последние добавленные</h3>
     </div>
 </div>
-<div class="row "><?php $i = 0 ?>
+<div class="row col-md-12 border "><?php $i = 0 ?>
+
     <?php foreach($category as $cat): ?>
         <div class="col-md-4 advert-main">
             <div class="row  advert-head">
@@ -30,6 +31,7 @@ $this->pageTitle='Обьявления'?>
             <?php endforeach; ?>
         </div>
     <?php endforeach; ?>
+
 </div>
 
 

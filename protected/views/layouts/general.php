@@ -13,18 +13,10 @@
 <body>
 
 <div class="container-fluid ">
-    <div class="row ">
-        <div class="rel">
-            <?php if (Yii::app()->user->hasFlash('success')): ?>
-                <div class="flash col-md-12"><?php echo Yii::app()->user->getFlash('success'); ?></div>
-            <?php endif; ?>
-        </div>
-
-        <div class="row">
-
-            <div class=" col-md-12" id="header">
-                <div class="col-md-10"><h2><a href="<?/*= Yii::app()->homeUrl */?>">Городская доска обьявлений</a> </h2></div>
-                <!--<ul class="header-menu">
+    <div class="row">
+        <div class=" col-md-12" id="header">
+            <div class="col-md-10"><h2><a href="<?/*= Yii::app()->homeUrl */?>">Городская доска обьявлений</a> </h2></div>
+            <!--<ul class="header-menu">
                     <li>
                         <a href="/advert/create">Добавить обьявление</a>
                     </li>
@@ -35,10 +27,18 @@
                         <?php /*endif; */?>
                     </li>
                 </ul>-->
-            </div>
+        </div>
+    </div>
+
+    <div class="row mb ">
+        <div class="rel">
+            <?php if (Yii::app()->user->hasFlash('success')): ?>
+                <div class="flash col-md-12"><?php echo Yii::app()->user->getFlash('success'); ?></div>
+            <?php endif; ?>
         </div>
 
-        <div class="col-md-3  ">
+        <div class="col-md-2  ">
+
             <div class="col-md-12 border">
                 <div><a href="/advert/create">Добавить обьявление</a></div>
                 <?php if (!Yii::app()->user->isGuest): ?>
@@ -62,13 +62,14 @@
             </div>
 
         </div>
-        <div class="col-md-9 border">
 
-            <?php echo $content; ?>
+        <div class="col-md-10">
+                <?php echo $content; ?>
         </div>
         <!--  -->
     </div>
 </div>
+
 <?php
     Yii::app()->clientScript->registerScript(
     'myHideEffect',

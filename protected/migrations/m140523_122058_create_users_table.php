@@ -1,7 +1,8 @@
 <?php
-use db\DbMigration;
 
-class m140523_122058_create_users_table extends DbMigration
+Yii::import('application.models.*');
+
+class m140523_122058_create_users_table extends CDbMigration
 {
     public function up()
     {
@@ -27,7 +28,7 @@ class m140523_122058_create_users_table extends DbMigration
                 'last_activity' =>time(),
                 'activation_status' =>Users::DEFAULT_ACTIVATION_STATUS,
                 'activation_key'  => 'sdfsdfsdfsdfsdg',
-                'deleted'=> null,
+                'deleted'=> Users::DEFAULT_DELETED_STATUS,
             ]);
 
         $this->insert('users',
@@ -39,7 +40,7 @@ class m140523_122058_create_users_table extends DbMigration
                 'last_activity' => time(),
                 'activation_status' => Users::DEFAULT_ACTIVATION_STATUS,
                 'activation_key'  => 'sdfsdf45ysdfsdfsdg',
-                'deleted'=> null,
+                'deleted'=> Users::DEFAULT_DELETED_STATUS,
             ]);
 
         $this->insert('users',
@@ -51,7 +52,7 @@ class m140523_122058_create_users_table extends DbMigration
                 'last_activity' => time(),
                 'activation_status' => Users::DEFAULT_ACTIVATION_STATUS,
                 'activation_key'  => 'sdfsdfsdfs5r657dfsdg',
-                'deleted'=> null,
+                'deleted'=> Users::DEFAULT_DELETED_STATUS,
             ]);
 
     }

@@ -27,6 +27,8 @@ class Users extends CActiveRecord
     const DEFAULT_ACTIVATION_STATUS = 0;
     const ACTIVE_ACTIVATION_STATUS = 1;
 
+    const DEFAULT_DELETED_STATUS = 0;
+
     const ROLE_ADMIN = 'administrator';
     const ROLE_GUEST = 'guest';
     const ROLE_USER = 'user';
