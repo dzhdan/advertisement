@@ -3,6 +3,14 @@
 class TestController extends Controller
 {
 
+public $layout = false;
+    public function actionIndex()
+    {
+       $url = $this->createUrl('news/view');
+
+    }
+
+
     public function actionWords()
     {
 
